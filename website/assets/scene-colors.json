@@ -1,0 +1,44 @@
+{
+ "old-glory": {
+  "ntp": "#0B1730",
+  "text": "#F4F1EA",
+  "link": "#F4D27A",
+  "frame": "#B31942",
+  "toolbar": "#0B1730"
+ },
+ "open-road": {
+  "ntp": "#2E2C64",
+  "text": "#F6E3CC",
+  "link": "#F2A65E",
+  "frame": "#2A1830",
+  "toolbar": "#3B2233"
+ },
+ "haze-gray": {
+  "ntp": "#2A3440",
+  "text": "#E8ECEE",
+  "link": "#FFD100",
+  "frame": "#4E5354",
+  "toolbar": "#828888"
+ },
+ "national-park": {
+  "ntp": "#2F6F7E",
+  "text": "#F7EEDC",
+  "link": "#F7E2A6",
+  "frame": "#1E3B30",
+  "toolbar": "#2F6F7E"
+ },
+ "tranquility-base": {
+  "ntp": "#05070B",
+  "text": "#F2F2F2",
+  "link": "#F0A030",
+  "frame": "#05070B",
+  "toolbar": "#1A1B1E"
+ },
+ "parchment": {
+  "ntp": "#EFE3C8",
+  "text": "#2B1D14",
+  "link": "#9E2B25",
+  "frame": "#D5C29A",
+  "toolbar": "#EFE3C8"
+ }
+}

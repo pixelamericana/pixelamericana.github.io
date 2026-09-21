@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pixel Americana</title>
+<meta name="description" content="Pixel-art American themes for your browser, desktop and phone. Free downloads.">
+<meta property="og:title" content="Pixel Americana"><meta property="og:description" content="Pixel-art American themes for your browser, desktop and phone.">
+<meta property="og:image" content="assets/img/share.png"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.png"><link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="theme-color" content="#0B1730">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Public+Sans:ital,wght@0,400;0,600;0,800;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --ground:#0B1730; --panel:#0F2143; --raise:#152B55; --line:#243E73;
+  --bone:#ECE4D2; --dim:#9AA9CC; --red:#C8234F; --redink:#FF7D99; --brass:#E1B24A;
+  --display:'Silkscreen', ui-monospace, 'Courier New', monospace;
+  --body:'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono:'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  --step:4px;
+  color-scheme: dark;
+}
+* { box-sizing:border-box; }
+html { background:var(--ground); }
+body { background:var(--ground); color:var(--bone); font:16px/1.6 var(--body); margin:0; }
+img { max-width:100%; display:block; image-rendering:pixelated; }
+a { color:var(--brass); }
+:focus-visible { outline:3px solid var(--brass); outline-offset:3px; }
+.wrap { max-width:1180px; margin:0 auto; padding-inline:clamp(16px, 4vw, 40px); }
+/* pixel-stepped corners instead of rounded ones */
+.px { clip-path:polygon(0 var(--step),var(--step) var(--step),var(--step) 0,calc(100% - var(--step)) 0,calc(100% - var(--step)) var(--step),100% var(--step),100% calc(100% - var(--step)),calc(100% - var(--step)) calc(100% - var(--step)),calc(100% - var(--step)) 100%,var(--step) 100%,var(--step) calc(100% - var(--step)),0 calc(100% - var(--step))); }
+
+/* header */
+.top { display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:18px; }
+.logo { font:700 18px/1 var(--display); letter-spacing:.04em; color:var(--bone); text-decoration:none; display:flex; align-items:center; gap:10px; }
+.logo img { width:24px; height:24px; }
+.top nav { display:flex; gap:clamp(12px,3vw,28px); font:600 14px/1 var(--body); }
+.top nav a { color:var(--dim); text-decoration:none; }
+.top nav a:hover { color:var(--bone); }
+
+/* hero: the animated scene is the thesis */
+.hero { position:relative; background:#0B1730; border-block:4px solid #06101F; }
+.hero-art { width:100%; height:auto; aspect-ratio:960/360; object-fit:cover; }
+.hero-copy { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:flex-start; padding-block:clamp(18px,5vw,56px); }
+.hero h1 { font:700 clamp(30px,6.4vw,80px)/.95 var(--display); margin:0; letter-spacing:.02em; text-wrap:balance; max-width:9ch; text-shadow:4px 4px 0 #06101F; }
+.hero p { margin:14px 0 0; max-width:34ch; font-size:clamp(14px,1.8vw,19px); color:#D8DDF0; text-shadow:2px 2px 0 #06101F; }
+.hero .cta { margin-top:clamp(12px,2.4vw,24px); display:flex; gap:12px; flex-wrap:wrap; }
+.btn { font:700 13px/1 var(--display); letter-spacing:.06em; text-transform:uppercase; text-decoration:none; padding:14px 18px; display:inline-block; background:var(--red); color:#fff; border:0; cursor:pointer; }
+.btn.alt { background:var(--bone); color:var(--ground); }
+.btn:hover { filter:brightness(1.12); }
+@media (max-width:620px) {
+  .hero-copy { position:static; background:var(--ground); padding-block:22px 6px; }
+  .hero h1 { text-shadow:none; } .hero p { text-shadow:none; color:var(--dim); }
+}
+
+section { padding-block:clamp(48px,8vw,96px); }
+.eyebrow { font:700 12px/1 var(--display); letter-spacing:.14em; text-transform:uppercase; color:var(--brass); margin:0 0 12px; }
+h2 { font:800 clamp(26px,3.6vw,40px)/1.1 var(--body); margin:0 0 12px; text-wrap:balance; letter-spacing:-.01em; }
+.lede { color:var(--dim); max-width:60ch; margin:0; }
+
+/* sets grid */
+.sets { list-style:none; margin:32px 0 0; padding:0; display:grid; gap:24px; grid-template-columns:repeat(auto-fill, minmax(min(100%, 330px), 1fr)); }
+.set-open { all:unset; cursor:pointer; display:grid; gap:10px; width:100%; }
+.set-art { display:block; border:4px solid var(--line); transition:transform .15s steps(3), border-color .15s; }
+.set-art img { width:100%; height:auto; aspect-ratio:960/360; }
+.set-open:hover .set-art, .set-open:focus-visible .set-art { transform:translate(-4px,-4px); border-color:var(--brass); box-shadow:8px 8px 0 #06101F; }
+.set-open:focus-visible { outline:none; }
+.set-meta { display:flex; align-items:baseline; justify-content:space-between; gap:12px; }
+.set-name { font:700 17px/1.2 var(--display); letter-spacing:.03em; }
+.set-mode { font:500 12px/1 var(--mono); color:var(--dim); text-transform:uppercase; letter-spacing:.08em; }
+.set-line { color:var(--dim); font-size:15px; }
+
+/* dialog */
+dialog { padding:0; border:0; background:var(--panel); color:var(--bone); width:min(1000px, calc(100vw - 32px)); max-height:calc(100dvh - 32px); overflow:auto; }
+dialog::backdrop { background:rgba(4,9,20,.82); }
+.close { position:sticky; top:0; float:right; margin:10px; z-index:2; font:700 12px/1 var(--display); background:var(--ground); color:var(--bone); border:2px solid var(--line); padding:10px 12px; cursor:pointer; }
+.panel-art img { width:100%; height:auto; }
+.panel-body { display:grid; grid-template-columns:1.25fr 1fr; gap:clamp(20px,4vw,40px); padding:clamp(18px,4vw,36px); }
+@media (max-width:760px) { .panel-body { grid-template-columns:1fr; } }
+.panel-body h2 { font-family:var(--display); font-weight:700; letter-spacing:.02em; }
+.panel-body h3 { font:700 12px/1 var(--display); letter-spacing:.12em; text-transform:uppercase; color:var(--brass); margin:26px 0 12px; }
+.panel-downloads h3 { margin-top:0; }
+.swatches { list-style:none; padding:0; margin:0; display:grid; gap:12px; }
+.swatches li { display:grid; grid-template-columns:36px 1fr auto; gap:2px 12px; align-items:center; }
+.chip { width:36px; height:36px; grid-row:span 2; border:2px solid rgba(255,255,255,.18); }
+.sw-name { font-weight:600; }
+.swatches code { font:500 13px var(--mono); color:var(--dim); }
+.sw-note { grid-column:2 / 4; color:var(--dim); font-size:13px; line-height:1.4; }
+.dl { display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:13px 14px; margin-bottom:8px; background:var(--raise); color:var(--bone); text-decoration:none; border-left:4px solid var(--red); }
+.dl span { font-weight:600; } .dl small { font:400 12px var(--mono); color:var(--dim); }
+.dl:hover { background:var(--line); }
+.dl.ghost { background:transparent; border:2px dashed var(--line); }
+.phone-thumb { width:124px; margin-top:16px; border:3px solid #06101F; }
+
+/* new tab section */
+.split { display:grid; grid-template-columns:1fr 1.3fr; gap:clamp(24px,5vw,64px); align-items:center; }
+@media (max-width:820px) { .split { grid-template-columns:1fr; } }
+.browser { background:#1C2238; border:4px solid #06101F; box-shadow:10px 10px 0 #06101F; }
+.browser-bar { display:flex; gap:6px; padding:9px 10px; background:#0E1426; }
+.browser-bar i { width:10px; height:10px; display:block; background:#3A4466; }
+.browser-bar i:first-child { background:var(--red); }
+.browser figure { margin:0; position:relative; background:#0B1730; }
+.browser figure img { width:100%; }
+.browser figcaption { position:absolute; top:12%; left:0; right:0; text-align:center; font:700 clamp(22px,5vw,46px)/1 var(--display); text-shadow:3px 3px 0 #06101F; }
+.browser figcaption small { display:block; font:500 clamp(10px,1.4vw,13px)/1.6 var(--mono); letter-spacing:.1em; color:#C9D3EC; margin-top:6px; text-shadow:none; }
+.checks { list-style:none; padding:0; margin:20px 0 26px; display:grid; gap:10px; }
+.checks li { padding-left:22px; position:relative; }
+.checks li::before { content:''; position:absolute; left:0; top:.55em; width:8px; height:8px; background:var(--brass); }
+
+/* install steps: a real sequence */
+.steps { list-style:none; counter-reset:s; padding:0; margin:32px 0 0; display:grid; gap:16px; grid-template-columns:repeat(auto-fit, minmax(min(100%,230px),1fr)); }
+.steps li { counter-increment:s; background:var(--panel); padding:20px; border-top:4px solid var(--line); }
+.steps li::before { content:counter(s); display:block; font:700 28px/1 var(--display); color:var(--brass); margin-bottom:12px; }
+.steps code { font:500 14px var(--mono); background:var(--raise); padding:2px 6px; }
+.note { margin-top:20px; color:var(--dim); font-size:14px; max-width:70ch; }
+
+footer { border-top:4px solid #06101F; background:#08112A; padding-block:36px; color:var(--dim); font-size:14px; }
+footer .wrap { display:flex; flex-wrap:wrap; gap:16px 40px; justify-content:space-between; }
+footer strong { color:var(--bone); font:700 14px var(--display); letter-spacing:.04em; }
+footer p { margin:6px 0 0; max-width:52ch; }
+@media (prefers-reduced-motion: reduce) { .set-art { transition:none; } }
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="logo" href="#"><img src="assets/img/favicon.png" alt="" width="24" height="24">PIXEL AMERICANA</a>
+  <nav aria-label="Main"><a href="#sets">Sets</a><a href="#newtab">New tab</a><a href="#install">Install</a></nav>
+</header>
+
+<div class="hero">
+  <img class="hero-art" src="assets/img/old-glory-animated.gif" alt="Pixel-art American flag waving over hills at dusk" width="960" height="360">
+  <div class="hero-copy"><div class="wrap">
+    <h1>Pixel Americana</h1>
+    <p>American scenes in pixel art for your browser, desktop and phone. Six sets. Free.</p>
+    <div class="cta"><a class="btn px" href="#sets">Browse the sets</a><a class="btn alt px" href="tab.html">Try the new tab</a></div>
+  </div></div>
+</div>
+
+<main>
+<section id="sets"><div class="wrap">
+  <p class="eyebrow">The sets</p>
+  <h2>Pick a scene. Get the whole set.</h2>
+  <p class="lede">Every scene comes as a Chrome theme, a desktop wallpaper (HD and 4K) and a phone wallpaper, with colors taken from real American sources where they exist.</p>
+  <ul class="sets">
+<li class="set">
+  <button class="set-open" type="button" data-scene="old-glory" aria-haspopup="dialog">
+    <span class="set-art" style="background:#0B1730"><img src="assets/img/old-glory-animated.gif" alt="Old Glory pixel scene" width="960" height="360" loading="lazy"></span>
+    <span class="set-meta"><span class="set-name">Old Glory</span><span class="set-mode">Dark</span></span>
+    <span class="set-line">Stars and stripes at dusk.</span>
+  </button>
+</li><li class="set">
+  <button class="set-open" type="button" data-scene="open-road" aria-haspopup="dialog">
+    <span class="set-art" style="background:#2E2C64"><img src="assets/img/open-road-card.png" alt="Open Road pixel scene" width="960" height="360" loading="lazy"></span>
+    <span class="set-meta"><span class="set-name">Open Road</span><span class="set-mode">Dark</span></span>
+    <span class="set-line">Monument Valley, sunset, nobody else on the highway.</span>
+  </button>
+</li><li class="set">
+  <button class="set-open" type="button" data-scene="haze-gray" aria-haspopup="dialog">
+    <span class="set-art" style="background:#2A3440"><img src="assets/img/haze-gray-card.png" alt="Haze Gray pixel scene" width="960" height="360" loading="lazy"></span>
+    <span class="set-meta"><span class="set-name">Haze Gray</span><span class="set-mode">Dark / neutral</span></span>
+    <span class="set-line">A destroyer dressed in signal flags at dawn.</span>
+  </button>
+</li><li class="set">
+  <button class="set-open" type="button" data-scene="national-park" aria-haspopup="dialog">
+    <span class="set-art" style="background:#2F6F7E"><img src="assets/img/national-park-card.png" alt="National Park pixel scene" width="960" height="360" loading="lazy"></span>
+    <span class="set-meta"><span class="set-name">National Park</span><span class="set-mode">Dark</span></span>
+    <span class="set-line">A WPA-poster valley at sunset.</span>
+  </button>
+</li><li class="set">
+  <button class="set-open" type="button" data-scene="tranquility-base" aria-haspopup="dialog">
+    <span class="set-art" style="background:#05070B"><img src="assets/img/tranquility-base-card.png" alt="Tranquility Base pixel scene" width="960" height="360" loading="lazy"></span>
+    <span class="set-meta"><span class="set-name">Tranquility Base</span><span class="set-mode">Dark</span></span>
+    <span class="set-line">Earthrise over the Sea of Tranquility.</span>
+  </button>
+</li><li class="set">
+  <button class="set-open" type="button" data-scene="parchment" aria-haspopup="dialog">
+    <span class="set-art" style="background:#EFE3C8"><img src="assets/img/parchment-card.png" alt="Parchment pixel scene" width="960" height="360" loading="lazy"></span>
+    <span class="set-meta"><span class="set-name">Parchment</span><span class="set-mode">Light</span></span>
+    <span class="set-line">The writing desk, by candlelight. The only light theme.</span>
+  </button>
+</li>
+  </ul>
+</div></section>
+
+<section id="newtab" style="background:var(--panel)"><div class="wrap split">
+  <div>
+    <p class="eyebrow">New tab</p>
+    <h2>A new scene every time you open a tab</h2>
+    <p class="lede">Set it as your homepage in any browser, Safari included. Nothing to install.</p>
+    <ul class="checks">
+      <li>A pixel clock and a search box</li>
+      <li>Switch between all six scenes</li>
+      <li><strong>Time of day</strong> mode: dawn at sea, noon in the park, sunset on the highway, night on the Moon</li>
+    </ul>
+    <a class="btn px" href="tab.html">Open the new tab</a>
+  </div>
+  <div class="browser px" aria-hidden="true">
+    <div class="browser-bar"><i></i><i></i><i></i></div>
+    <figure><img src="assets/img/tranquility-base-card.png" alt="" width="960" height="360" loading="lazy">
+      <figcaption>9:41<small>MONDAY · SEPTEMBER 21</small></figcaption></figure>
+  </div>
+</div></section>
+
+<section id="install"><div class="wrap">
+  <p class="eyebrow">Install a Chrome theme</p>
+  <h2>About a minute, start to finish</h2>
+  <ol class="steps">
+    <li>Download a set's <strong>Chrome theme</strong> and unzip it.</li>
+    <li>Go to <code>chrome://extensions</code> and switch on <strong>Developer mode</strong>, top right.</li>
+    <li>Click <strong>Load unpacked</strong> and choose the theme's folder.</li>
+    <li>Open a new tab. To go back, use <code>chrome://settings/appearance</code> › Reset.</li>
+  </ol>
+  <p class="note">Works in Chrome, Edge, Brave, Opera and Vivaldi. Chrome keeps one theme at a time; loading another replaces it. One-click installs from the Chrome Web Store are coming.</p>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <div><strong>PIXEL AMERICANA</strong><p>Original pixel art. Free for personal use on your own devices.</p></div>
+  <div><strong>PRIVACY</strong><p>No accounts, no cookies, no tracking. The new tab remembers your scene choice in your own browser and nowhere else.</p></div>
+</div></footer>
+
+<dialog id="set-dialog" aria-label="Scene set"><button class="close px" type="button" id="dlg-close">Close ✕</button><div id="dlg-body"></div></dialog>
+<template id="panel-old-glory">
+  <div class="panel-art" style="background:#0B1730"><img src="assets/img/old-glory-newtab.png" alt="Old Glory new tab art" width="1920" height="720"></div>
+  <div class="panel-body">
+    <div class="panel-text">
+      <p class="eyebrow">Dark set</p>
+      <h2>Old Glory</h2>
+      <p>The flag flies over the last light of a summer evening. The browser frame is Old Glory Red and the toolbar is the night sky around it.</p>
+      <h3>Why these colors</h3>
+      <ul class="swatches"><li><span class="chip" style="background:#B31942"></span><span class="sw-name">Old Glory Red</span><code>#B31942</code><span class="sw-note">Official flag red (textile standard No. 70180)</span></li><li><span class="chip" style="background:#0A3161"></span><span class="sw-name">Old Glory Blue</span><code>#0A3161</code><span class="sw-note">Official flag blue (No. 70075). Most websites use a purple-ish #3C3B6E sampled from a photo.</span></li><li><span class="chip" style="background:#0B1730"></span><span class="sw-name">Night sky</span><code>#0B1730</code><span class="sw-note">Toolbar and new-tab sky</span></li><li><span class="chip" style="background:#F4D27A"></span><span class="sw-name">Finial gold</span><code>#F4D27A</code><span class="sw-note">Links and highlights</span></li></ul>
+    </div>
+    <div class="panel-downloads">
+      <h3>Download</h3>
+      <a class="dl" href="assets/downloads/pixel-americana-old-glory-chrome-theme.zip"><span>Chrome theme</span><small>Chrome, Edge, Brave · zip</small></a>
+      <a class="dl" href="assets/wallpapers/old-glory-desktop-1920x1080.png"><span>Desktop wallpaper</span><small>1920 × 1080 · png</small></a>
+      <a class="dl" href="assets/wallpapers/old-glory-desktop-3840x2160.png"><span>Desktop wallpaper 4K</span><small>3840 × 2160 · png</small></a>
+      <a class="dl" href="assets/wallpapers/old-glory-phone-1125x2430.png"><span>Phone wallpaper</span><small>1125 × 2430 · png</small></a>
+      <a class="dl ghost" href="tab.html?scene=old-glory"><span>Open as new tab</span><small>works in any browser</small></a>
+      <img class="phone-thumb" src="assets/img/old-glory-phone-thumb.png" alt="Old Glory phone wallpaper" width="250" height="540" loading="lazy">
+    </div>
+  </div>
+</template><template id="panel-open-road">
+  <div class="panel-art" style="background:#2E2C64"><img src="assets/img/open-road-newtab.png" alt="Open Road new tab art" width="1920" height="720"></div>
+  <div class="panel-body">
+    <div class="panel-text">
+      <p class="eyebrow">Dark set</p>
+      <h2>Open Road</h2>
+      <p>An empty two-lane road runs toward the buttes while the telephone wires hum. A flag stands by the roadside.</p>
+      <h3>Why these colors</h3>
+      <ul class="swatches"><li><span class="chip" style="background:#2A1830"></span><span class="sw-name">Dusk</span><code>#2A1830</code><span class="sw-note">Browser frame</span></li><li><span class="chip" style="background:#D6603A"></span><span class="sw-name">Red rock</span><code>#D6603A</code><span class="sw-note">Sunlit sandstone</span></li><li><span class="chip" style="background:#ECBE3C"></span><span class="sw-name">Center line</span><code>#ECBE3C</code><span class="sw-note">Highway yellow</span></li><li><span class="chip" style="background:#F2A65E"></span><span class="sw-name">Last light</span><code>#F2A65E</code><span class="sw-note">Icons and links</span></li></ul>
+    </div>
+    <div class="panel-downloads">
+      <h3>Download</h3>
+      <a class="dl" href="assets/downloads/pixel-americana-open-road-chrome-theme.zip"><span>Chrome theme</span><small>Chrome, Edge, Brave · zip</small></a>
+      <a class="dl" href="assets/wallpapers/open-road-desktop-1920x1080.png"><span>Desktop wallpaper</span><small>1920 × 1080 · png</small></a>
+      <a class="dl" href="assets/wallpapers/open-road-desktop-3840x2160.png"><span>Desktop wallpaper 4K</span><small>3840 × 2160 · png</small></a>
+      <a class="dl" href="assets/wallpapers/open-road-phone-1125x2430.png"><span>Phone wallpaper</span><small>1125 × 2430 · png</small></a>
+      <a class="dl ghost" href="tab.html?scene=open-road"><span>Open as new tab</span><small>works in any browser</small></a>
+      <img class="phone-thumb" src="assets/img/open-road-phone-thumb.png" alt="Open Road phone wallpaper" width="250" height="540" loading="lazy">
+    </div>
+  </div>
+</template><template id="panel-haze-gray">
+  <div class="panel-art" style="background:#2A3440"><img src="assets/img/haze-gray-newtab.png" alt="Haze Gray new tab art" width="1920" height="720"></div>
+  <div class="panel-body">
+    <div class="panel-text">
+      <p class="eyebrow">Dark / neutral set</p>
+      <h2>Haze Gray</h2>
+      <p>Ships &quot;dress&quot; in a line of signal flags from bow to masthead to stern on holidays. This one does it at sunrise.</p>
+      <h3>Why these colors</h3>
+      <ul class="swatches"><li><span class="chip" style="background:#828888"></span><span class="sw-name">Haze gray</span><code>#828888</code><span class="sw-note">Navy paint color, federal standard 26270</span></li><li><span class="chip" style="background:#4E5354"></span><span class="sw-name">Deck shadow</span><code>#4E5354</code><span class="sw-note">Browser frame</span></li><li><span class="chip" style="background:#FFD100"></span><span class="sw-name">Signal yellow</span><code>#FFD100</code><span class="sw-note">Links</span></li><li><span class="chip" style="background:#C8102E"></span><span class="sw-name">Signal red</span><code>#C8102E</code><span class="sw-note">From the flag line</span></li></ul>
+    </div>
+    <div class="panel-downloads">
+      <h3>Download</h3>
+      <a class="dl" href="assets/downloads/pixel-americana-haze-gray-chrome-theme.zip"><span>Chrome theme</span><small>Chrome, Edge, Brave · zip</small></a>
+      <a class="dl" href="assets/wallpapers/haze-gray-desktop-1920x1080.png"><span>Desktop wallpaper</span><small>1920 × 1080 · png</small></a>
+      <a class="dl" href="assets/wallpapers/haze-gray-desktop-3840x2160.png"><span>Desktop wallpaper 4K</span><small>3840 × 2160 · png</small></a>
+      <a class="dl" href="assets/wallpapers/haze-gray-phone-1125x2430.png"><span>Phone wallpaper</span><small>1125 × 2430 · png</small></a>
+      <a class="dl ghost" href="tab.html?scene=haze-gray"><span>Open as new tab</span><small>works in any browser</small></a>
+      <img class="phone-thumb" src="assets/img/haze-gray-phone-thumb.png" alt="Haze Gray phone wallpaper" width="250" height="540" loading="lazy">
+    </div>
+  </div>
+</template><template id="panel-national-park">
+  <div class="panel-art" style="background:#2F6F7E"><img src="assets/img/national-park-newtab.png" alt="National Park new tab art" width="1920" height="720"></div>
+  <div class="panel-body">
+    <div class="panel-text">
+      <p class="eyebrow">Dark set</p>
+      <h2>National Park</h2>
+      <p>Flat colors in the style of the 1930s national park posters: purple peaks, black-green pines, a still lake and one bison.</p>
+      <h3>Why these colors</h3>
+      <ul class="swatches"><li><span class="chip" style="background:#2F6F7E"></span><span class="sw-name">Lake sky</span><code>#2F6F7E</code><span class="sw-note">Toolbar</span></li><li><span class="chip" style="background:#1E3B30"></span><span class="sw-name">Pine</span><code>#1E3B30</code><span class="sw-note">Browser frame</span></li><li><span class="chip" style="background:#7B5E8C"></span><span class="sw-name">Far peaks</span><code>#7B5E8C</code><span class="sw-note">Mountains</span></li><li><span class="chip" style="background:#F7E2A6"></span><span class="sw-name">Low sun</span><code>#F7E2A6</code><span class="sw-note">Icons and links</span></li></ul>
+    </div>
+    <div class="panel-downloads">
+      <h3>Download</h3>
+      <a class="dl" href="assets/downloads/pixel-americana-national-park-chrome-theme.zip"><span>Chrome theme</span><small>Chrome, Edge, Brave · zip</small></a>
+      <a class="dl" href="assets/wallpapers/national-park-desktop-1920x1080.png"><span>Desktop wallpaper</span><small>1920 × 1080 · png</small></a>
+      <a class="dl" href="assets/wallpapers/national-park-desktop-3840x2160.png"><span>Desktop wallpaper 4K</span><small>3840 × 2160 · png</small></a>
+      <a class="dl" href="assets/wallpapers/national-park-phone-1125x2430.png"><span>Phone wallpaper</span><small>1125 × 2430 · png</small></a>
+      <a class="dl ghost" href="tab.html?scene=national-park"><span>Open as new tab</span><small>works in any browser</small></a>
+      <img class="phone-thumb" src="assets/img/national-park-phone-thumb.png" alt="National Park phone wallpaper" width="250" height="540" loading="lazy">
+    </div>
+  </div>
+</template><template id="panel-tranquility-base">
+  <div class="panel-art" style="background:#05070B"><img src="assets/img/tranquility-base-newtab.png" alt="Tranquility Base new tab art" width="1920" height="720"></div>
+  <div class="panel-body">
+    <div class="panel-text">
+      <p class="eyebrow">Dark set</p>
+      <h2>Tranquility Base</h2>
+      <p>The lander is down, the flag is planted, and Earth hangs over the horizon. Amber accents like old mission-control readouts.</p>
+      <h3>Why these colors</h3>
+      <ul class="swatches"><li><span class="chip" style="background:#05070B"></span><span class="sw-name">Space</span><code>#05070B</code><span class="sw-note">Browser frame</span></li><li><span class="chip" style="background:#8E8C88"></span><span class="sw-name">Regolith</span><code>#8E8C88</code><span class="sw-note">Lunar surface</span></li><li><span class="chip" style="background:#2A6FBF"></span><span class="sw-name">Earth</span><code>#2A6FBF</code><span class="sw-note">Oceans</span></li><li><span class="chip" style="background:#F0A030"></span><span class="sw-name">Readout amber</span><code>#F0A030</code><span class="sw-note">Icons and links</span></li></ul>
+    </div>
+    <div class="panel-downloads">
+      <h3>Download</h3>
+      <a class="dl" href="assets/downloads/pixel-americana-tranquility-base-chrome-theme.zip"><span>Chrome theme</span><small>Chrome, Edge, Brave · zip</small></a>
+      <a class="dl" href="assets/wallpapers/tranquility-base-desktop-1920x1080.png"><span>Desktop wallpaper</span><small>1920 × 1080 · png</small></a>
+      <a class="dl" href="assets/wallpapers/tranquility-base-desktop-3840x2160.png"><span>Desktop wallpaper 4K</span><small>3840 × 2160 · png</small></a>
+      <a class="dl" href="assets/wallpapers/tranquility-base-phone-1125x2430.png"><span>Phone wallpaper</span><small>1125 × 2430 · png</small></a>
+      <a class="dl ghost" href="tab.html?scene=tranquility-base"><span>Open as new tab</span><small>works in any browser</small></a>
+      <img class="phone-thumb" src="assets/img/tranquility-base-phone-thumb.png" alt="Tranquility Base phone wallpaper" width="250" height="540" loading="lazy">
+    </div>
+  </div>
+</template><template id="panel-parchment">
+  <div class="panel-art" style="background:#EFE3C8"><img src="assets/img/parchment-newtab.png" alt="Parchment new tab art" width="1920" height="720"></div>
+  <div class="panel-body">
+    <div class="panel-text">
+      <p class="eyebrow">Light set</p>
+      <h2>Parchment</h2>
+      <p>Quill, inkwell, a candle and a letter sealed in red wax. Easy on the eyes for daytime reading.</p>
+      <h3>Why these colors</h3>
+      <ul class="swatches"><li><span class="chip" style="background:#EFE3C8"></span><span class="sw-name">Parchment</span><code>#EFE3C8</code><span class="sw-note">Toolbar and page</span></li><li><span class="chip" style="background:#2B1D14"></span><span class="sw-name">Iron-gall ink</span><code>#2B1D14</code><span class="sw-note">Text</span></li><li><span class="chip" style="background:#9E2B25"></span><span class="sw-name">Sealing wax</span><code>#9E2B25</code><span class="sw-note">Links</span></li><li><span class="chip" style="background:#D5C29A"></span><span class="sw-name">Aged paper</span><code>#D5C29A</code><span class="sw-note">Browser frame</span></li></ul>
+    </div>
+    <div class="panel-downloads">
+      <h3>Download</h3>
+      <a class="dl" href="assets/downloads/pixel-americana-parchment-chrome-theme.zip"><span>Chrome theme</span><small>Chrome, Edge, Brave · zip</small></a>
+      <a class="dl" href="assets/wallpapers/parchment-desktop-1920x1080.png"><span>Desktop wallpaper</span><small>1920 × 1080 · png</small></a>
+      <a class="dl" href="assets/wallpapers/parchment-desktop-3840x2160.png"><span>Desktop wallpaper 4K</span><small>3840 × 2160 · png</small></a>
+      <a class="dl" href="assets/wallpapers/parchment-phone-1125x2430.png"><span>Phone wallpaper</span><small>1125 × 2430 · png</small></a>
+      <a class="dl ghost" href="tab.html?scene=parchment"><span>Open as new tab</span><small>works in any browser</small></a>
+      <img class="phone-thumb" src="assets/img/parchment-phone-thumb.png" alt="Parchment phone wallpaper" width="250" height="540" loading="lazy">
+    </div>
+  </div>
+</template>
+<script>
+(() => {
+  const dlg = document.getElementById('set-dialog'), body = document.getElementById('dlg-body');
+  function open(scene) {
+    const t = document.getElementById('panel-' + scene); if (!t) return;
+    body.replaceChildren(t.content.cloneNode(true));
+    if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
+    dlg.scrollTop = 0;
+    try { history.replaceState(null, '', '#' + scene); } catch (e) {}
+  }
+  document.querySelectorAll('.set-open').forEach(b => b.addEventListener('click', () => open(b.dataset.scene)));
+  document.getElementById('dlg-close').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener('close', () => { try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {} });
+  const h = location.hash.slice(1); if (document.getElementById('panel-' + h)) open(h);
+})();
+</script>
+
+</body>
+</html>
