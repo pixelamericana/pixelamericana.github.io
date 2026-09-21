@@ -103,6 +103,11 @@ dialog::backdrop { background:rgba(4,9,20,.82); }
 .browser figure img { width:100%; }
 .browser figcaption { position:absolute; top:12%; left:0; right:0; text-align:center; font:700 clamp(22px,5vw,46px)/1 var(--display); text-shadow:3px 3px 0 #06101F; }
 .browser figcaption small { display:block; font:500 clamp(10px,1.4vw,13px)/1.6 var(--mono); letter-spacing:.1em; color:#C9D3EC; margin-top:6px; text-shadow:none; }
+.pix { image-rendering:pixelated; image-rendering:crisp-edges; }
+.cta-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:4px; }
+.vs { list-style:none; margin:32px 0 28px; padding:0; display:grid; gap:24px; grid-template-columns:repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.vs li { display:grid; grid-template-columns:1fr auto; gap:10px; align-items:baseline; }
+.vs img { grid-column:1 / -1; width:100%; height:auto; border:4px solid var(--line); }
 .checks { list-style:none; padding:0; margin:20px 0 26px; display:grid; gap:10px; }
 .checks li { padding-left:22px; position:relative; }
 .checks li::before { content:''; position:absolute; left:0; top:.55em; width:8px; height:8px; background:var(--brass); }
@@ -125,15 +130,15 @@ footer p { margin:6px 0 0; max-width:52ch; }
 
 <header class="wrap top">
   <a class="logo" href="#"><img src="assets/img/favicon.png" alt="" width="24" height="24">PIXEL AMERICANA</a>
-  <nav aria-label="Main"><a href="#sets">Sets</a><a href="#newtab">New tab</a><a href="#install">Install</a></nav>
+  <nav aria-label="Main"><a href="#sets">Sets</a><a href="#newtab">New tab</a><a href="#vscode">VS Code</a><a href="#install">Install</a></nav>
 </header>
 
 <div class="hero">
   <img class="hero-art" src="assets/img/old-glory-animated.gif" alt="Pixel-art American flag waving over hills at dusk" width="960" height="360">
   <div class="hero-copy"><div class="wrap">
     <h1>Pixel Americana</h1>
-    <p>American scenes in pixel art for your browser, desktop and phone. Six sets. Free.</p>
-    <div class="cta"><a class="btn px" href="#sets">Browse the sets</a><a class="btn alt px" href="tab.html">Try the new tab</a></div>
+    <p>American scenes in pixel art for your browser, desktop, phone and code editor. Six sets. Free.</p>
+    <div class="cta"><a class="btn px" href="#sets">Browse the sets</a><a class="btn alt px" href="#newtab">Get the new tab</a></div>
   </div></div>
 </div>
 
@@ -186,38 +191,53 @@ footer p { margin:6px 0 0; max-width:52ch; }
 <section id="newtab" style="background:var(--panel)"><div class="wrap split">
   <div>
     <p class="eyebrow">New tab</p>
-    <h2>A new scene every time you open a tab</h2>
-    <p class="lede">Set it as your homepage in any browser, Safari included. Nothing to install.</p>
+    <h2>A moving scene every time you open a tab</h2>
+    <p class="lede">All six scenes, animated, with a clock and a search box. Add it to Chrome, or use the web version in any browser, Safari included.</p>
     <ul class="checks">
-      <li>A pixel clock and a search box</li>
-      <li>Switch between all six scenes</li>
-      <li><strong>Time of day</strong> mode: dawn at sea, noon in the park, sunset on the highway, night on the Moon</li>
+      <li>Flags wave, stars twinkle, the candle flickers and the sea rolls in</li>
+      <li><strong>Time of day</strong>: dawn at sea, noon in the park, sunset on the highway, night on the Moon</li>
+      <li><strong>Every tab</strong>: a different scene each time, or pin your favorite</li>
+      <li>Searches go to your browser's own search engine. Motion can be switched off.</li>
     </ul>
-    <a class="btn px" href="tab.html">Open the new tab</a>
+    <div class="cta-row"><a class="btn px" href="assets/downloads/pixel-americana-new-tab-extension.zip" download>Download for Chrome</a><a class="btn alt px" href="tab.html">Try it in your browser</a></div>
+    <p class="note">The Chrome version installs the same way as a theme (steps below). Also works in Edge, Brave, Opera and Vivaldi.</p>
   </div>
   <div class="browser px" aria-hidden="true">
     <div class="browser-bar"><i></i><i></i><i></i></div>
-    <figure><img src="assets/img/tranquility-base-card.png" alt="" width="960" height="360" loading="lazy">
-      <figcaption>9:41<small>MONDAY · SEPTEMBER 21</small></figcaption></figure>
+    <figure><img class="pix" src="assets/img/newtab-open-road.gif" alt="" width="480" height="180" loading="lazy">
+      <figcaption>5:31<small>MONDAY · SEPTEMBER 21</small></figcaption></figure>
   </div>
 </div></section>
 
+<section id="vscode"><div class="wrap">
+  <p class="eyebrow">VS Code</p>
+  <h2>Three sets for your code editor</h2>
+  <p class="lede">Old Glory, Parchment and Haze Gray as color themes for Visual Studio Code. Every code color has at least 4.5:1 contrast with the background (the WCAG AA level for text), so long sessions stay easy to read.</p>
+  <ul class="vs">
+    <li><img src="assets/img/vscode-old-glory.png" alt="VS Code with the Old Glory theme: navy editor, red status bar" width="1200" height="720" loading="lazy"><span class="set-name">Old Glory</span><span class="set-mode">Dark</span></li>
+    <li><img src="assets/img/vscode-parchment.png" alt="VS Code with the Parchment theme: cream editor, wax-red status bar" width="1200" height="720" loading="lazy"><span class="set-name">Parchment</span><span class="set-mode">Light</span></li>
+    <li><img src="assets/img/vscode-haze-gray.png" alt="VS Code with the Haze Gray theme: dark gray editor, signal-yellow keywords" width="1200" height="720" loading="lazy"><span class="set-name">Haze Gray</span><span class="set-mode">Dark / neutral</span></li>
+  </ul>
+  <div class="cta-row"><a class="btn px" href="assets/downloads/pixel-americana-themes.vsix" download>Download for VS Code</a></div>
+  <p class="note">One file, all three themes. In VS Code, open Extensions, click the <strong>…</strong> menu, choose <strong>Install from VSIX…</strong> and pick the file. Then run <strong>Preferences: Color Theme</strong> and choose a Pixel Americana theme.</p>
+</div></section>
+
 <section id="install"><div class="wrap">
-  <p class="eyebrow">Install a Chrome theme</p>
+  <p class="eyebrow">Install in Chrome</p>
   <h2>About a minute, start to finish</h2>
   <ol class="steps">
-    <li>Download a set's <strong>Chrome theme</strong> and unzip it.</li>
+    <li>Download the <strong>New Tab extension</strong> or a set's <strong>Chrome theme</strong>, unzip it and move the folder somewhere it can stay (not Downloads).</li>
     <li>Go to <code>chrome://extensions</code> and switch on <strong>Developer mode</strong>, top right.</li>
-    <li>Click <strong>Load unpacked</strong> and choose the theme's folder.</li>
-    <li>Open a new tab. To go back, use <code>chrome://settings/appearance</code> › Reset.</li>
+    <li>Click <strong>Load unpacked</strong> and choose the folder.</li>
+    <li>Open a new tab. The extension and a theme can run together. To undo a theme, use <code>chrome://settings/appearance</code> › Reset.</li>
   </ol>
-  <p class="note">Works in Chrome, Edge, Brave, Opera and Vivaldi. Chrome keeps one theme at a time; loading another replaces it. One-click installs from the Chrome Web Store are coming.</p>
+  <p class="note">Works in Chrome, Edge, Brave, Opera and Vivaldi. Chrome keeps one theme at a time, so loading another replaces it. If Chrome asks whether to keep the new tab change, choose Keep it. One-click installs from the Chrome Web Store are coming.</p>
 </div></section>
 </main>
 
 <footer><div class="wrap">
   <div><strong>PIXEL AMERICANA</strong><p>Original pixel art. Free for personal use on your own devices.</p></div>
-  <div><strong>PRIVACY</strong><p>No accounts, no cookies, no tracking. The new tab remembers your scene choice in your own browser and nowhere else.</p></div>
+  <div><strong>PRIVACY</strong><p>No accounts, no cookies, no tracking. The new tab remembers your scene choice in your own browser and nowhere else. The extension asks for one permission, search, so it can use your browser's search engine.</p></div>
 </div></footer>
 
 <dialog id="set-dialog" aria-label="Scene set"><button class="close px" type="button" id="dlg-close">Close ✕</button><div id="dlg-body"></div></dialog>
