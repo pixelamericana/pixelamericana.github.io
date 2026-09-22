@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pixel Americana New Tab</title>
+<meta name="description" content="A pixel-art new tab page: animated American scenes, a clock, search and old American recordings.">
+<link rel="icon" href="../assets/img/favicon.png">
+<link rel="stylesheet" href="newtab.css">
+</head>
+<body>
+<canvas id="art" width="480" height="270" aria-hidden="true"></canvas>
+<a class="home" id="home" href="#">PIXEL AMERICANA</a>
+<main>
+  <div class="clock" id="clock">--:--</div>
+  <div class="date" id="date"></div>
+  <form id="search" action="https://www.google.com/search" method="get" role="search">
+    <label for="q" class="sr">Search</label>
+    <input type="search" id="q" name="q" placeholder="Search Google" autocomplete="off" autofocus>
+    <button type="submit">Search</button>
+  </form>
+</main>
+
+<div class="bar left">
+  <button class="btn" id="open-gallery" type="button" aria-haspopup="dialog" title="Choose a scene (G)">
+    <svg class="ico" viewBox="0 0 7 7" aria-hidden="true"><path fill="currentColor" d="M0 0h3v3H0zM4 0h3v3H4zM0 4h3v3H0zM4 4h3v3H4z"/></svg>
+    <span id="scene-name">Scenes</span>
+  </button>
+  <button class="btn" id="motion" type="button" aria-pressed="true">
+    <svg class="ico" viewBox="0 0 7 7" aria-hidden="true"><path fill="currentColor" d="M0 1h1v5H0zM2 0h1v7H2zM4 2h1v3H4zM6 1h1v5H6z"/></svg><span>Motion on</span>
+  </button>
+</div>
+
+<div class="bar right" id="player-bar">
+  <div class="player">
+    <button class="btn only-open" id="m-prev" type="button" aria-label="Previous track">◀◀</button>
+    <button class="btn" id="m-play" type="button" aria-label="Play" aria-pressed="false" title="Old American recordings, 1902-1923">
+      <span class="glyph">▶</span><span class="lbl">Music</span>
+    </button>
+    <button class="btn only-open" id="m-next" type="button" aria-label="Next track">▶▶</button>
+    <div class="meta">
+      <div class="tt" id="m-title"></div>
+      <div class="tp" id="m-perf"></div>
+      <div class="prog"><i id="m-prog"></i></div>
+      <a class="credit" id="m-credit" href="#" target="_blank" rel="noopener"></a>
+    </div>
+    <label class="sr" for="m-vol">Volume</label>
+    <input class="vol" id="m-vol" type="range" min="0" max="1" step="0.05">
+    <button class="btn only-open" id="m-close" type="button" aria-label="Stop and hide the player">✕</button>
+  </div>
+</div>
+
+<dialog id="gallery" aria-labelledby="g-title">
+  <div class="g-head">
+    <h2 id="g-title">Scenes</h2>
+    <label class="sr" for="g-search">Search scenes</label>
+    <input id="g-search" type="search" placeholder="Search scenes" autocomplete="off">
+    <button class="g-close" id="g-close" type="button">Close ✕</button>
+  </div>
+  <div class="chips" id="chips" role="group" aria-label="Categories"></div>
+  <ul class="grid" id="grid"></ul>
+  <div class="g-foot"><span>Press G to open this panel.</span><span>Tap ★ to add a favorite.</span></div>
+</dialog>
+
+<script src="config.js"></script>
+<script src="newtab.js"></script>
+</body>
+</html>

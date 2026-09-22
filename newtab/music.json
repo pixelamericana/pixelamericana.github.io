@@ -1,0 +1,160 @@
+{
+ "tracks": [
+  {
+   "id": "semper-fidelis",
+   "file": "semper-fidelis.mp3",
+   "title": "Semper Fidelis",
+   "composer": "John Philip Sousa (1888)",
+   "performer": "New York Military Band",
+   "year": 1919,
+   "release": "Edison 50671",
+   "source": "https://archive.org/details/edison-50671_01_6912",
+   "archive": "UCSB / Internet Archive",
+   "mood": "march"
+  },
+  {
+   "id": "america",
+   "file": "america.mp3",
+   "title": "America (My Country, 'Tis of Thee)",
+   "composer": "Traditional",
+   "performer": "New York Military Band",
+   "year": 1914,
+   "release": "Edison 50169",
+   "source": "https://archive.org/details/edison-50169_01_3035",
+   "archive": "UCSB / Internet Archive",
+   "mood": "calm"
+  },
+  {
+   "id": "stars-and-stripes-marimba",
+   "file": "stars-and-stripes-marimba.mp3",
+   "title": "The Stars and Stripes Forever (marimba)",
+   "composer": "John Philip Sousa (1896)",
+   "performer": "Imperial Marimba Band",
+   "year": 1917,
+   "release": "Edison 50466",
+   "source": "https://archive.org/details/edison-50466_01_5210",
+   "archive": "UCSB / Internet Archive",
+   "mood": "parlor"
+  },
+  {
+   "id": "battle-hymn",
+   "file": "battle-hymn.mp3",
+   "title": "Battle Hymn of the Republic",
+   "composer": "Julia Ward Howe / William Steffe (1861)",
+   "performer": "Thomas Chalmers, baritone",
+   "year": 1917,
+   "release": "Edison 82133",
+   "source": "https://archive.org/details/edison-82133_01_5591",
+   "archive": "UCSB / Internet Archive",
+   "mood": "anthem"
+  },
+  {
+   "id": "el-capitan",
+   "file": "el-capitan.mp3",
+   "title": "El Capitan March",
+   "composer": "John Philip Sousa (1896)",
+   "performer": "New York Military Band",
+   "year": 1921,
+   "release": "Edison 50748",
+   "source": "https://archive.org/details/edison-50748_01_6987",
+   "archive": "UCSB / Internet Archive",
+   "mood": "march"
+  },
+  {
+   "id": "silver-threads",
+   "file": "silver-threads.mp3",
+   "title": "Silver Threads Among the Gold (piano)",
+   "composer": "H. P. Danks (1873)",
+   "performer": "Ernest L. Stevens, piano",
+   "year": 1922,
+   "release": "Edison 51124",
+   "source": "https://archive.org/details/edison-51124_01_8714",
+   "archive": "UCSB / Internet Archive",
+   "mood": "calm"
+  },
+  {
+   "id": "black-and-white-rag",
+   "file": "black-and-white-rag.mp3",
+   "title": "Black and White Rag",
+   "composer": "George Botsford (1908)",
+   "performer": "New York Military Band",
+   "year": 1913,
+   "release": "Edison 50116",
+   "source": "https://archive.org/details/edison-50116_01_2462",
+   "archive": "UCSB / Internet Archive",
+   "mood": "parlor"
+  },
+  {
+   "id": "over-there",
+   "file": "over-there.mp3",
+   "title": "Over There",
+   "composer": "George M. Cohan (1917)",
+   "performer": "Billy Murray",
+   "year": 1917,
+   "release": "Edison 50443",
+   "source": "https://archive.org/details/edison-50443_01_5659",
+   "archive": "UCSB / Internet Archive",
+   "mood": "anthem"
+  },
+  {
+   "id": "washington-post",
+   "file": "washington-post.mp3",
+   "title": "The Washington Post March",
+   "composer": "John Philip Sousa (1889)",
+   "performer": "United States Marine Band",
+   "year": 1923,
+   "release": "Edison 51377",
+   "source": "https://archive.org/details/edison-51377_01_9198",
+   "archive": "UCSB / Internet Archive",
+   "mood": "march"
+  },
+  {
+   "id": "beautiful-ohio",
+   "file": "beautiful-ohio.mp3",
+   "title": "Beautiful Ohio Waltz",
+   "composer": "Mary Earl (1918)",
+   "performer": "Jaudas' Society Orchestra",
+   "year": 1918,
+   "release": "Edison 50511",
+   "source": "https://archive.org/details/edison-50511_01_6434",
+   "archive": "UCSB / Internet Archive",
+   "mood": "calm"
+  },
+  {
+   "id": "on-the-village-green",
+   "file": "on-the-village-green.mp3",
+   "title": "On the Village Green",
+   "composer": "Thomas H. Rollinson",
+   "performer": "Fred Van Eps, banjo",
+   "year": 1923,
+   "release": "Edison 51480",
+   "source": "https://archive.org/details/edison-51480_01_9109",
+   "archive": "UCSB / Internet Archive",
+   "mood": "parlor"
+  },
+  {
+   "id": "liberty-bell",
+   "file": "liberty-bell.mp3",
+   "title": "The Liberty Bell March",
+   "composer": "John Philip Sousa (1893)",
+   "performer": "New York Military Band",
+   "year": 1917,
+   "release": "Edison 50636",
+   "source": "https://archive.org/details/edison-50636_01_5506",
+   "archive": "UCSB / Internet Archive",
+   "mood": "march"
+  },
+  {
+   "id": "hail-columbia",
+   "file": "hail-columbia.mp3",
+   "title": "Hail, Columbia",
+   "composer": "Philip Phile (c. 1789)",
+   "performer": "New York Military Band",
+   "year": 1914,
+   "release": "Edison 50169",
+   "source": "https://archive.org/details/edison-50169_01_3069",
+   "archive": "UCSB / Internet Archive",
+   "mood": "march"
+  }
+ ]
+}

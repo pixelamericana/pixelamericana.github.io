@@ -1,0 +1,113 @@
+{
+ "version": "2.0.0",
+ "scenes": [
+  {
+   "slug": "old-glory",
+   "title": "Old Glory",
+   "category": "Flag & Country",
+   "tags": [],
+   "line": "Stars and stripes at dusk.",
+   "mode": "Dark",
+   "frames": 12,
+   "ms": 130,
+   "bg": "#0B1730",
+   "text": "#F4F1EA",
+   "accent": "#F4D27A",
+   "position": "55% 100%",
+   "music": [
+    "stars-and-stripes-forever",
+    "america"
+   ]
+  },
+  {
+   "slug": "open-road",
+   "title": "Open Road",
+   "category": "Frontier & Road",
+   "tags": [],
+   "line": "Monument Valley, sunset, nobody else on the highway.",
+   "mode": "Dark",
+   "frames": 12,
+   "ms": 130,
+   "bg": "#0E1434",
+   "text": "#F6E3CC",
+   "accent": "#F2A65E",
+   "position": "30% 100%",
+   "music": [
+    "on-the-village-green",
+    "dalys-reel"
+   ]
+  },
+  {
+   "slug": "haze-gray",
+   "title": "Haze Gray",
+   "category": "Military",
+   "tags": [],
+   "line": "A destroyer dressed in signal flags at dawn.",
+   "mode": "Dark / neutral",
+   "frames": 12,
+   "ms": 130,
+   "bg": "#232C37",
+   "text": "#E8ECEE",
+   "accent": "#FFD100",
+   "position": "60% 100%",
+   "music": [
+    "semper-fidelis",
+    "hail-columbia"
+   ]
+  },
+  {
+   "slug": "national-park",
+   "title": "National Park",
+   "category": "Landmarks & Parks",
+   "tags": [],
+   "line": "A WPA-poster valley at sunset.",
+   "mode": "Dark",
+   "frames": 12,
+   "ms": 130,
+   "bg": "#285E6C",
+   "text": "#F7EEDC",
+   "accent": "#F7E2A6",
+   "position": "50% 100%",
+   "music": [
+    "america-the-beautiful",
+    "beautiful-ohio"
+   ]
+  },
+  {
+   "slug": "tranquility-base",
+   "title": "Tranquility Base",
+   "category": "Space",
+   "tags": [],
+   "line": "Earthrise over the Sea of Tranquility.",
+   "mode": "Dark",
+   "frames": 12,
+   "ms": 130,
+   "bg": "#05070B",
+   "text": "#F2F2F2",
+   "accent": "#F0A030",
+   "position": "50% 100%",
+   "music": [
+    "battle-hymn",
+    "star-spangled-banner"
+   ]
+  },
+  {
+   "slug": "parchment",
+   "title": "Parchment",
+   "category": "Founding Era",
+   "tags": [],
+   "line": "The writing desk, by candlelight. The only light theme.",
+   "mode": "Light",
+   "frames": 12,
+   "ms": 130,
+   "bg": "#EFE3C8",
+   "text": "#2B1D14",
+   "accent": "#9E2B25",
+   "position": "50% 100%",
+   "music": [
+    "yankee-doodle-banjo",
+    "silver-threads"
+   ]
+  }
+ ]
+}
