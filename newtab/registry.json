@@ -1,5 +1,5 @@
 {
- "version": "2.0.0",
+ "version": "2.1.0",
  "scenes": [
   {
    "slug": "old-glory",
@@ -13,11 +13,7 @@
    "bg": "#0B1730",
    "text": "#F4F1EA",
    "accent": "#F4D27A",
-   "position": "55% 100%",
-   "music": [
-    "stars-and-stripes-forever",
-    "america"
-   ]
+   "position": "55% 100%"
   },
   {
    "slug": "open-road",
@@ -31,11 +27,7 @@
    "bg": "#0E1434",
    "text": "#F6E3CC",
    "accent": "#F2A65E",
-   "position": "30% 100%",
-   "music": [
-    "on-the-village-green",
-    "dalys-reel"
-   ]
+   "position": "30% 100%"
   },
   {
    "slug": "haze-gray",
@@ -49,11 +41,7 @@
    "bg": "#232C37",
    "text": "#E8ECEE",
    "accent": "#FFD100",
-   "position": "60% 100%",
-   "music": [
-    "semper-fidelis",
-    "hail-columbia"
-   ]
+   "position": "60% 100%"
   },
   {
    "slug": "national-park",
@@ -67,11 +55,7 @@
    "bg": "#285E6C",
    "text": "#F7EEDC",
    "accent": "#F7E2A6",
-   "position": "50% 100%",
-   "music": [
-    "america-the-beautiful",
-    "beautiful-ohio"
-   ]
+   "position": "50% 100%"
   },
   {
    "slug": "tranquility-base",
@@ -85,11 +69,7 @@
    "bg": "#05070B",
    "text": "#F2F2F2",
    "accent": "#F0A030",
-   "position": "50% 100%",
-   "music": [
-    "battle-hymn",
-    "star-spangled-banner"
-   ]
+   "position": "50% 100%"
   },
   {
    "slug": "parchment",
@@ -103,11 +83,7 @@
    "bg": "#EFE3C8",
    "text": "#2B1D14",
    "accent": "#9E2B25",
-   "position": "50% 100%",
-   "music": [
-    "yankee-doodle-banjo",
-    "silver-threads"
-   ]
+   "position": "50% 100%"
   }
  ]
 }

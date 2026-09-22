@@ -4,22 +4,69 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Pixel Americana New Tab</title>
-<meta name="description" content="A pixel-art new tab page: animated American scenes, a clock, search and old American recordings.">
+<meta name="description" content="A pixel-art new tab page: animated American scenes, a clock and search with suggestions.">
 <link rel="icon" href="../assets/img/favicon.png">
 <link rel="stylesheet" href="newtab.css">
 </head>
 <body>
 <canvas id="art" width="480" height="270" aria-hidden="true"></canvas>
 <a class="home" id="home" href="#">PIXEL AMERICANA</a>
+
+<nav class="gbar" aria-label="Google">
+  <a class="glink" href="https://mail.google.com/mail/" id="g-gmail">Gmail</a>
+  <a class="glink" href="https://www.google.com/imghp" id="g-images">Images</a>
+  <a class="glink lab" href="#" id="g-labs" hidden>Labs</a>
+  <button class="gicon" id="apps-btn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="apps" title="Google apps">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"/></svg>
+  </button>
+  <a class="avatar" id="avatar" href="https://myaccount.google.com/" title="Google Account">
+    <span id="avatar-letter" aria-hidden="true"></span><span class="sr">Google Account</span>
+  </a>
+  <div class="apps" id="apps" hidden></div>
+</nav>
+
 <main>
   <div class="clock" id="clock">--:--</div>
   <div class="date" id="date"></div>
-  <form id="search" action="https://www.google.com/search" method="get" role="search">
-    <label for="q" class="sr">Search</label>
-    <input type="search" id="q" name="q" placeholder="Search Google" autocomplete="off" autofocus>
-    <button type="submit">Search</button>
+  <form id="search" action="https://www.google.com/search" method="get" role="search" autocomplete="off">
+    <label for="q" class="sr">Search Google or type a URL</label>
+    <div class="q-wrap" id="q-wrap">
+      <svg class="q-lead" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <input type="text" id="q" name="q" placeholder="Search Google or type a URL" autocomplete="off" spellcheck="false" autofocus role="combobox" aria-expanded="false" aria-controls="suggest" aria-autocomplete="list">
+      <button class="q-clear" id="q-clear" type="button" aria-label="Clear" hidden>✕</button>
+      <span class="q-div" aria-hidden="true"></span>
+      <button class="q-tool" id="mic" type="button" aria-label="Search by voice" title="Search by voice">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285f4" d="M12 15c1.66 0 3-1.31 3-2.97v-7.02c0-1.66-1.34-3.01-3-3.01s-3 1.34-3 3.01v7.02c0 1.66 1.34 2.97 3 2.97z"/><path fill="#34a853" d="M11 18.08h2v3.92h-2z"/><path fill="#fbbc04" d="M7.05 16.87c-1.27-1.33-2.05-2.83-2.05-4.87h2c0 1.45.56 2.42 1.47 3.38v.32l-1.15 1.18z"/><path fill="#ea4335" d="M12 16.93a4.97 5.25 0 0 1-3.54-1.55l-1.41 1.49c1.26 1.34 3.02 2.13 4.95 2.13 3.87 0 6.99-2.92 6.99-7h-1.99c0 2.92-2.24 4.93-5 4.93z"/></svg>
+      </button>
+      <button class="q-tool" id="lens" type="button" aria-label="Search by image" title="Search by image">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.3" fill="#4285f4"/><path fill="#ea4335" d="M4 8V6a2 2 0 0 1 2-2h2V2H6a4 4 0 0 0-4 4v2z"/><path fill="#fbbc04" d="M16 2v2h2a2 2 0 0 1 2 2v2h2V6a4 4 0 0 0-4-4z"/><path fill="#34a853" d="M20 16v2a2 2 0 0 1-2 2h-2v2h2a4 4 0 0 0 4-4v-2z"/><path fill="#4285f4" d="M8 20H6a2 2 0 0 1-2-2v-2H2v2a4 4 0 0 0 4 4h2z"/></svg>
+      </button>
+      <button class="q-ai" id="ai-mode" type="button" title="Ask AI Mode">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10 2l1.9 5.1L17 9l-5.1 1.9L10 16l-1.9-5.1L3 9l5.1-1.9zM18 13l1 2.6 2.6 1-2.6 1-1 2.6-1-2.6-2.6-1 2.6-1z"/></svg>
+        <span>AI Mode</span>
+      </button>
+      <ul id="suggest" class="suggest" role="listbox" hidden></ul>
+    </div>
   </form>
+  <ul class="tiles" id="tiles" aria-label="Shortcuts" hidden></ul>
 </main>
+
+<div class="lens-pop" id="lens-pop" role="dialog" aria-label="Search any image with Google Lens" hidden>
+  <div class="lens-head"><b>Search any image with Google Lens</b><button type="button" id="lens-x" aria-label="Close">✕</button></div>
+  <div class="lens-drop" id="lens-drop">
+    <p>Drag an image here or <button type="button" class="linkish" id="lens-pick">upload a file</button></p>
+    <p class="lens-sub">You can also paste an image here</p>
+  </div>
+  <div class="lens-or"><span>OR</span></div>
+  <form class="lens-url" id="lens-url"><input type="url" id="lens-url-in" placeholder="Paste image link" required><button type="submit">Search</button></form>
+  <input type="file" id="lens-file" accept="image/*" hidden>
+  <form id="lens-post" method="post" enctype="multipart/form-data" action="https://lens.google.com/v3/upload" hidden></form>
+</div>
+
+<div class="voice" id="voice" role="dialog" aria-label="Voice search" hidden>
+  <button type="button" class="voice-x" id="voice-x" aria-label="Close">✕</button>
+  <div class="voice-in"><p id="voice-text">Listening…</p><span class="voice-mic" id="voice-mic" aria-hidden="true"></span></div>
+</div>
 
 <div class="bar left">
   <button class="btn" id="open-gallery" type="button" aria-haspopup="dialog" title="Choose a scene (G)">
@@ -29,25 +76,9 @@
   <button class="btn" id="motion" type="button" aria-pressed="true">
     <svg class="ico" viewBox="0 0 7 7" aria-hidden="true"><path fill="currentColor" d="M0 1h1v5H0zM2 0h1v7H2zM4 2h1v3H4zM6 1h1v5H6z"/></svg><span>Motion on</span>
   </button>
-</div>
-
-<div class="bar right" id="player-bar">
-  <div class="player">
-    <button class="btn only-open" id="m-prev" type="button" aria-label="Previous track">◀◀</button>
-    <button class="btn" id="m-play" type="button" aria-label="Play" aria-pressed="false" title="Old American recordings, 1902-1923">
-      <span class="glyph">▶</span><span class="lbl">Music</span>
-    </button>
-    <button class="btn only-open" id="m-next" type="button" aria-label="Next track">▶▶</button>
-    <div class="meta">
-      <div class="tt" id="m-title"></div>
-      <div class="tp" id="m-perf"></div>
-      <div class="prog"><i id="m-prog"></i></div>
-      <a class="credit" id="m-credit" href="#" target="_blank" rel="noopener"></a>
-    </div>
-    <label class="sr" for="m-vol">Volume</label>
-    <input class="vol" id="m-vol" type="range" min="0" max="1" step="0.05">
-    <button class="btn only-open" id="m-close" type="button" aria-label="Stop and hide the player">✕</button>
-  </div>
+  <button class="btn" id="tiles-toggle" type="button" aria-pressed="true" hidden>
+    <svg class="ico" viewBox="0 0 7 7" aria-hidden="true"><path fill="currentColor" d="M0 2h2v2H0zM2.5 2h2v2h-2zM5 2h2v2H5z"/></svg><span>Shortcuts</span>
+  </button>
 </div>
 
 <dialog id="gallery" aria-labelledby="g-title">

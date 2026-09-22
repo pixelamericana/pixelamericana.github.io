@@ -1,1 +1,1 @@
-window.PA_CONFIG = {"assets": "", "music": "../music/", "home": "../"};
+window.PA_CONFIG = {"assets": "", "home": "../"};
