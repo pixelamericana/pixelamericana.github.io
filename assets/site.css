@@ -182,6 +182,14 @@ section + section { border-top:1px solid var(--line); }
 .cur-set figcaption { font:500 9px var(--mono); color:var(--dim); text-transform:uppercase; letter-spacing:.04em; text-align:center; }
 .cur-set figure.light figcaption { color:#5a5a5a; }
 .tryit { margin-top:12px; padding:22px; border:2px dashed var(--line); text-align:center; color:var(--dim); font-size:14px; display:grid; gap:10px; justify-items:center; }
+.sign { position:relative; width:100%; height:120px; background:#EFE3C8; border:2px solid #C9B58C; box-shadow:inset 0 0 0 3px #F7EEDB; touch-action:none; }
+.sign canvas { position:absolute; inset:0; width:100%; height:100%; image-rendering:pixelated; image-rendering:crisp-edges; }
+.sign::after { content:""; position:absolute; left:34px; right:18px; bottom:30px; border-bottom:2px solid #9C8660; pointer-events:none; }
+.sign .x { position:absolute; left:14px; bottom:30px; font:700 16px var(--body); color:#9C8660; font-style:normal; pointer-events:none; }
+.sign .hint { position:absolute; left:0; right:0; top:40%; font:italic 600 15px Georgia, serif; color:#9C8660; pointer-events:none; transition:opacity .3s; }
+.sign.inked .hint { opacity:0; }
+.sign .clear { position:absolute; right:6px; top:6px; font:600 11px var(--body); padding:4px 8px; background:#F7EEDB; color:#5A4630; border:1px solid #C9B58C; opacity:0; transition:opacity .2s; }
+.sign.inked .clear { opacity:1; }
 .tryit .row { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
 .tryit button, .tryit input { font:600 13px var(--body); padding:9px 14px; border:2px solid var(--line); background:var(--raise); color:var(--bone); }
 .plat { display:grid; gap:8px; align-content:start; }
