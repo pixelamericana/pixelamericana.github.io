@@ -16,6 +16,26 @@
    "position": "55% 100%"
   },
   {
+   "slug": "independence-night",
+   "title": "Independence Night",
+   "category": "Flag & Country",
+   "tags": [
+    "fireworks",
+    "july 4",
+    "250",
+    "washington",
+    "monument"
+   ],
+   "line": "The Fourth, 2026: fireworks over the Monument for the 250th.",
+   "mode": "Night",
+   "frames": 12,
+   "ms": 150,
+   "bg": "#060A1E",
+   "text": "#F4F1EA",
+   "accent": "#FF8FA3",
+   "position": "50% 100%"
+  },
+  {
    "slug": "open-road",
    "title": "Open Road",
    "category": "Frontier & Road",
@@ -28,6 +48,45 @@
    "text": "#F6E3CC",
    "accent": "#F2A65E",
    "position": "30% 100%"
+  },
+  {
+   "slug": "big-sky",
+   "title": "Big Sky",
+   "category": "Heartland",
+   "tags": [
+    "clouds",
+    "farm",
+    "truck",
+    "summer"
+   ],
+   "line": "Summer cumulus stacked a mile high over farm country.",
+   "mode": "Light sky",
+   "frames": 12,
+   "ms": 140,
+   "bg": "#2F5FAE",
+   "text": "#FFFFFF",
+   "accent": "#F2C230",
+   "position": "62% 100%"
+  },
+  {
+   "slug": "bluebonnets",
+   "title": "Bluebonnets",
+   "category": "Heartland",
+   "tags": [
+    "texas",
+    "longhorn",
+    "flowers",
+    "spring",
+    "clouds"
+   ],
+   "line": "Hill country in April: longhorns standing in the bluebonnets.",
+   "mode": "Golden hour",
+   "frames": 12,
+   "ms": 150,
+   "bg": "#4E69AC",
+   "text": "#FFF4E6",
+   "accent": "#FAD6BE",
+   "position": "40% 100%"
   },
   {
    "slug": "haze-gray",
@@ -56,6 +115,26 @@
    "text": "#F7EEDC",
    "accent": "#F7E2A6",
    "position": "50% 100%"
+  },
+  {
+   "slug": "lookout",
+   "title": "Lookout",
+   "category": "Landmarks & Parks",
+   "tags": [
+    "forest",
+    "fire tower",
+    "owl",
+    "stars",
+    "night"
+   ],
+   "line": "A fire lookout on the ridge, lamp lit, the whole forest asleep below.",
+   "mode": "Night",
+   "frames": 12,
+   "ms": 160,
+   "bg": "#070B22",
+   "text": "#E9ECF8",
+   "accent": "#FFD27A",
+   "position": "55% 100%"
   },
   {
    "slug": "tranquility-base",
